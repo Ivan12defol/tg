@@ -1,0 +1,18 @@
+# render.yaml
+services:
+  - type: web  # Використаємо web для стабільності, але це буде фоновим завданням
+    name: game-portal-bot
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "python bot.py"
+    autoDeploy: true
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      - key: TOKEN
+        value: 7991271281:AAEOuPlQeeHak2xUGhusKGENisTaqL60QOg
+      - key: CHANNEL_ID
+        value: @Game_Portal_bot
+    regions:
+      - eu-central-1
+    plan: free
